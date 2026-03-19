@@ -1,13 +1,16 @@
 <?php
 include './Controllers/BookController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
-
+$book = new BookController();
 switch ($action) {
     case "index":
-        $book = new BookController();
         $book->index();
         break;
     case "add":
+        $book->create();
+        break;
+    case "store":
+        $book->store();
         break;
     case "edit":
         break;

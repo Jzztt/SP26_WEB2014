@@ -12,7 +12,21 @@ class  BookController
     function index()
     {
         $books =  $this->book->getBook();
-        var_dump($books);
         include './Views/index.php';
+    }
+
+    function create()
+    {
+        include './Views/create.php';
+    }
+
+    function store()
+    {
+        if (isset($_POST['submit'])) {
+            $name = $_POST['name'];
+            $image = $_POST['image'];
+            $author = $_POST['author'];
+            echo  $name . $image . $author;
+        }
     }
 }
