@@ -33,4 +33,11 @@ class  BookController
             }
         }
     }
+    function delete($id)
+    {
+        $succes = $this->book->deleteBook($id);
+        if ($succes) {
+            header("Location: ?act=index");
+        }
+    }
 }

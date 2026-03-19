@@ -15,6 +15,8 @@ switch ($action) {
     case "edit":
         break;
     case "delete":
+        $id = $_GET['id'];
+        $book ->delete($id);
         break;
     default:
         include './Views/index.php';

@@ -23,4 +23,10 @@ class Book
         $query = "INSERT INTO books(name,author,image) VALUES ('$name','$author','$image')";
         return $this->db->exec($query);
     }
+
+    public function deleteBook($id)
+    {
+        $query = "DELETE FROM books WHERE id=$id";
+        return $this->db->exec($query);
+    }
 }

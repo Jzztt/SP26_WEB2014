@@ -21,6 +21,7 @@
                 <th>name</th>
                 <th>Image</th>
                 <th>Author</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -30,6 +31,10 @@
                     <td><?php echo $book['name']; ?></td>
                     <td><img src="<?php echo 'uploads/img/' . $book['image']; ?>" alt="<?php echo $book['name']; ?>" width="100"></td>
                     <td><?php echo $book['author']; ?></td>
+                    <td>
+                        <a href="?act=edit&id=<?php echo $book['id']; ?>">Edit</a>
+                        <a href="?act=delete&id=<?php echo $book['id']; ?>">Delete</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
