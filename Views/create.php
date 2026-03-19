@@ -13,7 +13,7 @@
         <input type="text" id="name" name="name"><br><br>
 
         <label for="image">Image URL:</label>
-        <input type="text" id="image" name="image"><br><br>
+        <input type="file" id="image" name="image"><br><br>
 
         <label for="author">Author:</label>
         <input type="text" id="author" name="author"><br><br>

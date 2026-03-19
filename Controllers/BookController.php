@@ -24,9 +24,13 @@ class  BookController
     {
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];
-            $image = $_POST['image'];
             $author = $_POST['author'];
-            echo  $name . $image . $author;
+            $image = $_FILES['image']['name'];
+            move_uploaded_file(($_FILES['image']['tmp_name']), 'uploads/img/' . $_FILES['image']['name']);
+            $succes =  $this->book->insertBook($name, $author, $image);
+            if ($succes) {
+                header("Location: ?act=index");
+            }
         }
     }
 }

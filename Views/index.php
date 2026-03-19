@@ -28,7 +28,7 @@
                 <tr>
                     <td><?php echo $book['id']; ?></td>
                     <td><?php echo $book['name']; ?></td>
-                    <td><img src="<?php echo $book['image']; ?>" alt="<?php echo $book['name']; ?>" width="100"></td>
+                    <td><img src="<?php echo 'uploads/img/' . $book['image']; ?>" alt="<?php echo $book['name']; ?>" width="100"></td>
                     <td><?php echo $book['author']; ?></td>
                 </tr>
             <?php endforeach; ?>

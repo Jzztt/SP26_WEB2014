@@ -18,5 +18,9 @@ class Book
 
     public function editBook() {}
 
-    public function insertBook() {}
+    public function insertBook($name, $author, $image)
+    {
+        $query = "INSERT INTO books(name,author,image) VALUES ('$name','$author','$image')";
+        return $this->db->exec($query);
+    }
 }
