@@ -13,10 +13,12 @@ switch ($action) {
         $book->store();
         break;
     case "edit":
+        $id = $_GET['id'];
+        $book->edit($id);
         break;
     case "delete":
         $id = $_GET['id'];
-        $book ->delete($id);
+        $book->delete($id);
         break;
     default:
         include './Views/index.php';

@@ -23,6 +23,12 @@ class Book
         $query = "INSERT INTO books(name,author,image) VALUES ('$name','$author','$image')";
         return $this->db->exec($query);
     }
+    public function getBookById($id)
+    {
+        $query = "SELECT * from books where id=$id";
+        $result = $this->db->query($query)->fetch();
+        return $result;
+    }
 
     public function deleteBook($id)
     {

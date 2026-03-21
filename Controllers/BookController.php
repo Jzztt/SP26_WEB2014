@@ -33,6 +33,14 @@ class  BookController
             }
         }
     }
+
+    function edit($id)
+    {
+        $book = $this->book->getBookById($id);
+        var_dump($book);
+        include './Views/update.php';
+    }
+
     function delete($id)
     {
         $succes = $this->book->deleteBook($id);
