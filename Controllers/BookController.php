@@ -41,6 +41,20 @@ class  BookController
         include './Views/update.php';
     }
 
+    function update($id)
+    {
+        if (isset($_POST['submit'])) {
+            $name = $_POST['name'];
+            $author = $_POST['author'];
+            $image = $_FILES['image']['name'];
+            move_uploaded_file(($_FILES['image']['tmp_name']), 'uploads/img/' . $_FILES['image']['name']);
+            $succes =  $this->book->updateBook($id, $name, $author, $image);
+            if ($succes) {
+                header("Location: ?act=index");
+            }
+        }
+    }
+
     function delete($id)
     {
         $succes = $this->book->deleteBook($id);

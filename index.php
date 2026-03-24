@@ -16,6 +16,10 @@ switch ($action) {
         $id = $_GET['id'];
         $book->edit($id);
         break;
+    case "update":
+        $id = $_GET['id'];
+        $book->update($id);
+        break;
     case "delete":
         $id = $_GET['id'];
         $book->delete($id);

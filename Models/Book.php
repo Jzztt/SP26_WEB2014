@@ -16,7 +16,6 @@ class Book
         return $results;
     }
 
-    public function editBook() {}
 
     public function insertBook($name, $author, $image)
     {
@@ -29,6 +28,12 @@ class Book
         $result = $this->db->query($query)->fetch();
         return $result;
     }
+    public function updateBook($id, $name, $author, $image)
+    {
+        $query = "UPDATE books SET name='$name', author='$author', image='$image' WHERE id=$id";
+        return $this->db->exec($query);
+    }
+
 
     public function deleteBook($id)
     {
